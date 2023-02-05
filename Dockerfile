@@ -1,10 +1,11 @@
-FROM python:3.9.12
+FROM python
 
-COPY ./qr_code.py /qr/
-COPY ./docker.txt /qr/
+WORKDIR /QR_CODE/
 
-WORKDIR /qr/
+COPY ./main.py /QR_CODE/
+COPY ./qrpython /QR_CODE/
+#COPY docker.txt /QR_CODE/
 
-RUN pip3 install -r ./docker.txt
+#RUN pip install -r docker.txt
 
-ENTRYPOINT ["python", "qr_code.py"]
+ENTRYPOINT ["python3", "main.py"]

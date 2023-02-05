@@ -23,7 +23,7 @@ def qr_code():
             elif qr_tipo == "PLATAFORMA" and ((qr_subtipo != "Videoclub") and (qr_subtipo != "Banca online")):
                 break
             else:
-                    os.makedirs(f'QR_CODE/QR/{qr_tipo}/{qr_subtipo}', exist_ok=True)
+                    os.makedirs(f'QR_im/{qr_tipo}/{qr_subtipo}', exist_ok=True)
                     
                     qr_code = input(str("Introduce la URL:\n"))
                     name = input(str("Introduce el nombre con el que deseas guardar el código QR:\n"))
@@ -31,6 +31,6 @@ def qr_code():
                     img = qrcode.make(
                         qr_code
                     )
-                    img.save(f'QR_CODE/QR/{qr_tipo}/{qr_subtipo}/{name}.png')
+                    img.save(f'QR_im/{qr_tipo}/{qr_subtipo}/{name}.png')
                     img.show()
                 
